@@ -16,6 +16,12 @@
 {% for page in pages %}
   <li>
     <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+    <div style="text-align: right;">
+      [&nbsp;{% for tag in page.taxonomies.tags %}
+      <a href="/tags/{{ tag }}">#{{ tag }}</a>&nbsp;
+      {% endfor %}
+      ]
+    </div>
   </li>
 {% endfor %}
 </ul>
