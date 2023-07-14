@@ -99,7 +99,7 @@
 
         <script>
           const setTheme=(theme)=>{document.documentElement.className=theme;localStorage.setItem('theme',theme)}
-          const getTheme=()=>{const theme=localStorage.getItem('theme');theme&&setTheme(theme)}
+          const getTheme=()=>{const theme=localStorage.getItem('theme');const t=theme?theme:'{{ config.extra.default_theme | default(value="light") }}';setTheme(t)}
           getTheme()
         </script>
       </nav>
